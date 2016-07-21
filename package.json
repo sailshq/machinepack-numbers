@@ -1,0 +1,26 @@
+{
+  "name": "machinepack-numbers",
+  "version": "0.1.0",
+  "description": "Work with numbers.",
+  "scripts": {
+    "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
+  },
+  "keywords": [
+    "Numbers",
+    "machines",
+    "machinepack"
+  ],
+  "author": "The Treeline Company",
+  "license": "MIT",
+  "dependencies":{
+    "machine": "^12.3.0"
+  },
+  "devDependencies": {
+    "test-machinepack-mocha": "^2.0.0"
+  },
+  "machinepack": {
+    "friendlyName": "Numbers",
+    "machineDir": "machines/",
+    "machines": []
+  }
+}
