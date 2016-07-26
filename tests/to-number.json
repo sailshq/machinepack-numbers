@@ -1,0 +1,73 @@
+{
+  "machine": "to-number",
+  "expectations": [
+    {
+      "using": {
+        "value": 5
+      },
+      "outcome": "success",
+      "returns": 5
+    },
+    {
+      "using": {
+        "value": "\"5\""
+      },
+      "outcome": "success",
+      "returns": 5
+    },
+    {
+      "using": {
+        "value": 5.5
+      },
+      "outcome": "success",
+      "returns": 5.5
+    },
+    {
+      "using": {
+        "value": "\"5.5\""
+      },
+      "outcome": "success",
+      "returns": 5.5
+    },
+    {
+      "using": {
+        "value": "abc"
+      },
+      "outcome": "nan"
+    },
+    {
+      "using": {
+        "value": "\"true\""
+      },
+      "outcome": "nan"
+    },
+    {
+      "using": {
+        "value": "\"false\""
+      },
+      "outcome": "nan"
+    },
+    {
+      "using": {
+        "value": {}
+      },
+      "outcome": "nan"
+    },
+    {
+      "using": {
+        "value": []
+      },
+      "outcome": "nan"
+    },
+    {
+      "using": {
+        "value": [123]
+      },
+      "outcome": "nan"
+    },
+    {
+      "using": {},
+      "outcome": "nan"
+    }
+  ]
+}
