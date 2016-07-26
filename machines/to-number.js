@@ -10,7 +10,7 @@ module.exports = {
   extendedDescription: 'If the value cannot be converted to a number, the `NaN` exit will be triggered.',
 
 
-  cacheable: true,
+  sideEffects: 'cacheable',
 
 
   sync: true,
