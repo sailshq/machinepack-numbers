@@ -1,13 +1,13 @@
 module.exports = {
 
 
-  friendlyName: 'Convert to number',
+  friendlyName: 'Convert string to number',
 
 
-  description: 'Convert the given input value to a number.',
+  description: 'Convert the given input string to a number.',
 
 
-  extendedDescription: 'If the value cannot be converted to a number, the `NaN` exit will be triggered.',
+  extendedDescription: 'This machine specifically converts "numeric" strings (e.g. "123", "-5", "4.56" and "1.23e+50") to numbers.  If the string is not numeric, an error will be triggered.  If you need to convert _any_ string to a number (defaulting to zero) use the "Construct value" machine from the "Util" pack.  Note that the strings "Infinity" and "-Infinity" will also trigger an error.',
 
 
   sideEffects: 'cacheable',
@@ -18,9 +18,9 @@ module.exports = {
 
   inputs: {
 
-    value: {
-      description: 'The value to convert to a number.',
-      example: '==='
+    string: {
+      description: 'The string to convert to a number.',
+      example: '123'
     }
 
   },
@@ -30,33 +30,21 @@ module.exports = {
 
     success: {
       outputFriendlyName: 'Number',
-      outputDescription: 'The value obtained by converting the input value to a number.',
+      outputDescription: 'The value obtained by converting the input string to a number.',
       outputExample: 123
-    },
-
-    nan: {
-      friendlyName: 'Not a number',
-      description: 'The input value could not be converted to a number.'
     }
-
   },
 
 
   fn: function(inputs, exits) {
 
-    // Special case for arrays -- always trigger `nan`, because
-    // empty array or arrays with a single numeric value will otherwise
-    // be cast as a number, which is not what we want.
-    if (Array.isArray(inputs.value)) {
-      return exits.nan();
-    }
 
     // Attempt to convert the input value to a number.
-    var converted = +inputs.value;
+    var converted = +inputs.string;
 
-    // If the result is NaN, trigger the `nan` exit.
-    if (isNaN(converted)) {
-      return exits.nan();
+    // If the result is NaN, Infinity or -Infinity, trigger the `error` exit.
+    if (isNaN(converted) || converted === Infinity || converted === -Infinity) {
+      return exits.error('The given string could not be converted to a number.');
     }
 
     // Otherwise return the converted value through the `success` exit.

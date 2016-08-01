@@ -3,71 +3,75 @@
   "expectations": [
     {
       "using": {
-        "value": 5
+        "string": "0"
+      },
+      "outcome": "success",
+      "returns": 0
+    },
+    {
+      "using": {
+        "string": "-5"
+      },
+      "outcome": "success",
+      "returns": -5
+    },
+    {
+      "using": {
+        "string": "5"
       },
       "outcome": "success",
       "returns": 5
     },
     {
       "using": {
-        "value": "\"5\""
-      },
-      "outcome": "success",
-      "returns": 5
-    },
-    {
-      "using": {
-        "value": 5.5
+        "string": "5.5"
       },
       "outcome": "success",
       "returns": 5.5
     },
     {
       "using": {
-        "value": "\"5.5\""
+        "string": "1.5e+50"
       },
       "outcome": "success",
-      "returns": 5.5
+      "returns": 1.5e+50
     },
     {
       "using": {
-        "value": "abc"
+        "string": "1.5e-50"
       },
-      "outcome": "nan"
+      "outcome": "success",
+      "returns": 1.5e-50
     },
     {
       "using": {
-        "value": "\"true\""
+        "string": "Infinity"
       },
-      "outcome": "nan"
+      "outcome": "error"
     },
     {
       "using": {
-        "value": "\"false\""
+        "string": "-Infinity"
       },
-      "outcome": "nan"
+      "outcome": "error"
     },
     {
       "using": {
-        "value": {}
+        "string": "abc"
       },
-      "outcome": "nan"
+      "outcome": "error"
     },
     {
       "using": {
-        "value": []
+        "string": "true"
       },
-      "outcome": "nan"
+      "outcome": "error"
     },
     {
       "using": {
-        "value": [123]
+        "string": "false"
       },
-      "outcome": "nan"
-    },
-    {
-      "using": {},
-      "outcome": "nan"
+      "outcome": "error"
     }
   ]
 }
