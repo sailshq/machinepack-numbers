@@ -22,7 +22,8 @@
     "friendlyName": "Numbers",
     "machineDir": "machines/",
     "machines": [
-      "to-number"
+      "to-number",
+      "is-numeric"
     ]
   }
 }
