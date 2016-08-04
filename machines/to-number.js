@@ -44,7 +44,7 @@ module.exports = {
 
     // If the result is NaN, Infinity or -Infinity, trigger the `error` exit.
     if (isNaN(converted) || converted === Infinity || converted === -Infinity) {
-      return exits.error('The given string could not be converted to a number.');
+      return exits.error(new Error('The given string could not be converted to a number.'));
     }
 
     // Otherwise return the converted value through the `success` exit.
