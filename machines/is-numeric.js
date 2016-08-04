@@ -20,7 +20,8 @@ module.exports = {
 
     string: {
       description: 'The string to check.',
-      example: '123.45'
+      example: '123.45',
+      required: true
     }
 
   },
