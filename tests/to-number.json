@@ -63,13 +63,13 @@
     },
     {
       "using": {
-        "string": "true"
+        "string": "\"true\""
       },
       "outcome": "error"
     },
     {
       "using": {
-        "string": "false"
+        "string": "\"false\""
       },
       "outcome": "error"
     }
