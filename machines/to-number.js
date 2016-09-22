@@ -7,7 +7,7 @@ module.exports = {
   description: 'Convert the given input string to a number.',
 
 
-  extendedDescription: 'This machine specifically converts "numeric" strings (e.g. "123", "-5", "4.56" and "1.23e+50") to numbers.  If the string is not numeric, an error will be triggered.  If you need to convert _any_ string to a number (defaulting to zero) use the "Construct value" machine from the "Util" pack.  Note that the strings "Infinity" and "-Infinity" will also trigger an error.',
+  extendedDescription: 'This machine specifically converts "numeric" strings (e.g. "123", "-5", "4.56" and "1.23e+50") to numbers.  If the string is not numeric, an error will be triggered.  Note that the strings "Infinity" and "-Infinity" will also trigger an error.',
 
 
   sideEffects: 'cacheable',
